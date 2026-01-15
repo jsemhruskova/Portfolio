@@ -1,0 +1,637 @@
+/* ============================================
+   OSOBNÍ PORTFOLIO - LUCIE HRUŠKOVÁ
+   CSS - Tmavý design s upraveným formulářem
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
+/* === ZÁKLADNÍ NASTAVENÍ === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+
+/* === NAVIGACE === */
+.navbar {
+    background-color: #2a2a2a !important;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    display: none;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.nav-item {
+    margin: 0 6rem;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-size: 1rem;
+    padding: 0.7rem 0 !important;
+    transition: all 0.3s;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+    text-transform: lowercase;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    background-color: transparent;
+    border-bottom: 2px solid #ffffff;
+}
+
+.nav-link.active {
+    background-color: transparent !important;
+    border-radius: 0;
+    border-bottom: 2px solid #ffffff;
+}
+
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
+}
+
+/* === HOMEPAGE === */
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin: 0 auto;
+    display: block;
+}
+
+.homepage-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1.5rem 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.homepage-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+/* === TLAČÍTKA === */
+
+/* ČERVENÝ BUTTON (pro homepage) */
+.btn-custom {
+    background-color: #e74c3c;
+    border: none;
+    color: #ffffff;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    display: inline-block;
+    transition: all 0.3s;
+    margin: 5px 5px 5px 5px;
+}
+
+.btn-custom:hover {
+    background-color: #FBC01A;
+    color: #ffffff;
+}
+/* MODRÝ BUTTON (pro formulář) */
+.btn-custom-blue {
+    background-color: #4267B2;
+    border: none;
+    color: #ffffff;
+    padding: 14px 50px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 25px;
+    display: block;
+    width: 100%;
+    margin: 0;
+    transition: all 0.3s;
+    text-align: center;
+    position: relative;  
+    overflow: hidden;    
+}
+
+/* Text uvnitř tlačítka */
+.btn-custom-blue::before {
+    content: attr(data-text); 
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+
+/* Hover efekt - fialové pozadí */
+.btn-custom-blue:hover {
+    background-color: #9B59B6;  
+    color: #ffffff;
+}
+
+/* Při hover schovej původní text a ukaž "Woohoo!" */
+.btn-custom-blue:hover::before {
+    opacity: 0;
+}
+
+.btn-custom-blue:hover::after {
+    content: "Woohoo!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 0.1rem;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 3rem;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    color: #e74c3c;
+}
+
+/* === O MNĚ STRÁNKA === */
+.about-page {
+    background-color: #2a2a2a;
+    min-height: calc(100vh - 56px);
+}
+
+.page-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+/* === INTRO SEKCE S TEXTEM A CAROUSELEM === */
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+/* Carousel pro intro sekci */
+#introCarousel .carousel-inner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+#introCarousel .carousel-control-prev-icon,
+#introCarousel .carousel-control-next-icon {
+    background-color: rgba(255,255,255,0.3);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+#introCarousel .carousel-indicators button {
+    background-color: #666666;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+#introCarousel .carousel-indicators button.active {
+    background-color: #e74c3c;
+}
+
+/* === ACCORDION === */
+.accordion-item {
+    border: 2px solid #444444;
+    margin-bottom: 1rem;
+    border-radius: 30px !important;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.accordion-button {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #3a3a3a;
+    padding: 1.25rem 1.5rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #444444;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #444444;
+}
+
+.accordion-button::after {
+    filter: brightness(0) invert(1);
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
+.accordion-body {
+    padding: 2rem 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    background-color: #333333;
+}
+
+.accordion-body img {
+    width: 100%;
+    height: auto;
+    max-height: 80%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+#slavicek {
+    max-height: 1000px!important;
+    max-width: 100% !important;
+    object-fit: cover;
+}
+/* Dropdown select */
+.work-select {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #444444;
+    border-radius: 8px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+.work-select:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 0.2rem rgba(231,76,60,0.25);
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+/* === KONTAKT STRÁNKA === */
+.contact-page {
+    background-color: #2a2a2a;
+    min-height: calc(100vh - 56px);
+}
+
+.contact-info-box {
+    background-color: #3a3a3a;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.contact-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.contact-item strong {
+    color: #ffffff;
+}
+
+.map-box {
+    background-color: #3a3a3a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.map-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+/* === FORMULÁŘ === */
+.contact-form-box {
+    background-color: #3a3a3a;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.form-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.form-subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+
+/* Inputy podle tvého designu */
+.form-control {
+    padding: 14px 16px;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #555555;
+    border-radius: 0;
+    transition: border 0.3s;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.form-control::placeholder {
+    color: #888888;
+}
+
+.form-control:focus {
+    border-bottom: 2px solid #ffffff;
+    box-shadow: none;
+    background-color: transparent;
+    color: #ffffff;
+    outline: none;
+}
+
+/* Label pro checkboxy */
+.checkbox-label {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* Checkboxy */
+.form-check {
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-top: 0.1rem;
+    background-color: transparent;
+    border: 2px solid #888888;
+}
+
+.form-check-label {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-left: 0.7rem;
+}
+
+.form-check-input:checked {
+    background-color: #4267B2;
+    border-color: #4267B2;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(66, 103, 178, 0.25);
+}
+
+/* === PATIČKA === */
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+    color: #e0e0e0;
+}
+
+
+/* === PŘEKRÝVAJÍCÍ SE FOTKY === */
+.stacked-images-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.stacked-image {
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    background-color: #3a3a3a;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* První obrázek - vlevo nahoře */
+.stacked-image:nth-child(1) {
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transform: rotate(18deg);
+}
+
+/* Druhý obrázek - uprostřed */
+.stacked-image:nth-child(2) {
+    
+    left: 50px;
+    z-index: 2;
+    transform: rotate(-8deg);
+}
+
+/* Třetí obrázek - vpravo dole */
+.stacked-image:nth-child(3) {
+    left: 100px;
+    z-index: 1;
+    transform: rotate(12deg);
+}
+
+/* Fade out efekt */
+.stacked-image.fade-out {
+    opacity: 0;
+}
+
+/* === STYLOVÁNÍ ODKAZŮ (HYPERTEXT) === */
+.links {
+    color: #4267B2;  /* Modrá barva pro odkazy */
+    text-decoration: none;  /* Bez podtržení */
+    transition: all 0.3s ease;
+}
+
+
+/* Odkazy v textu */
+p a,
+.intro-text a,
+.accordion-body a {
+    color: #6ba3ff;  /* Světlejší modrá v textu */
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+}
+
+p a:hover,
+.intro-text a:hover,
+.accordion-body a:hover {
+    color: #de8aff;  /* Žlutá při hoveru */
+}
+
+
+/* === RESPONZIVITA === */
+
+/* Tablet */
+@media (max-width: 991px) {
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .homepage-title {
+        font-size: 2.2rem;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .intro-text {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    #introCarousel .carousel-inner img {
+        height: 300px;
+    }
+
+    .accordion-button {
+        font-size: 1.2rem;
+    }
+
+    .btn-custom-blue {
+        padding: 12px 40px;
+        font-size: 1rem;
+    }
+}
+
+/* Mobil */
+@media (max-width: 576px) {
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .homepage-title {
+        font-size: 1.8rem;
+    }
+
+    .homepage-text {
+        font-size: 1rem;
+    }
+
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    #introCarousel .carousel-inner img {
+        height: 250px;
+    }
+
+    .accordion-button {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+
+    .accordion-body {
+        padding: 1.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .contact-form-box {
+        padding: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+    }
+
+    .btn-custom-blue {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+/* Responzivita pro mobil */
+@media (max-width: 576px) {
+    .stacked-images-container {
+        height: 300px;
+        max-width: 350px;
+    }
+    
+    .stacked-image:nth-child(2) {
+        top: 20px;
+        left: 30px;
+    }
+    
+    .stacked-image:nth-child(3) {
+        top: 40px;
+        left: 60px;
+    }
+}
+
+
+/* Responzivita pro mobil */
+@media (max-width: 576px) {
+    .stacked-images-container {
+        height: 300px;
+        max-width: 350px;
+    }
+    
+    .stacked-image:nth-child(2) {
+        top: 20px;
+        left: 30px;
+    }
+    
+    .stacked-image:nth-child(3) {
+        top: 40px;
+        left: 60px;
+    }
+}
