@@ -1,4 +1,8 @@
-Portfolio
+
+
+
+Portfolio pro vlastní potřebu, popisuje mě jako fotografa a člověka
+
 Logují se mi data z návštěvnosti stránek o mně a kontakt také se mi logují data z formulářů
 
 Příklad formuláře:
@@ -13,3 +17,4 @@ Aktivní WEB lze najít v lucynx.endora.site
 
 z důvodu o pokusu ochrany osobních údajů jsem tam dala falešnou adresu a číslo, tak doufám, že nevadí
 
+Bylo použito AI
